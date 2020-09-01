@@ -3,6 +3,7 @@ class BuildingsController < ApplicationController
 
   def index
     @buildings = Building.all
+    @stations = Station.all
   end
 
   def show
@@ -10,6 +11,7 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
+    @station = Station.new
   end
 
   def edit
@@ -44,11 +46,11 @@ class BuildingsController < ApplicationController
   end
 
   private
-    def set_building
-      @building = Building.find(params[:id])
-    end
+  def set_building
+    @building = Building.find(params[:id])
+  end
 
-    def building_params
-      params.require(:building).permit(:name, :rental_fees, :address, :build_year, :remark)
-    end
+  def building_params
+    params.require(:building).permit(:name, :rental_fees, :address, :build_year, :remark)
+  end
 end
