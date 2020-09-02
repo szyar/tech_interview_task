@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :rental_fees %>
-    <%= form.number_field :rental_fees %>
+    <%= form.number_field :rental_fees %> Yen
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :build_year %>
-    <%= form.number_field :build_year %>
+    <%= form.number_field :build_year %> year
   </div>
 
   <div class="field">
@@ -37,7 +37,7 @@
   </div>
   <hr>
 
-  <h3><%= message %></h3>
+  <h3><%= station_message %></h3>
   <%= form.fields_for :stations do |builder| %>
     <%= render 'station_fields', f: builder %>
   <% end %>
