@@ -26,8 +26,7 @@
 </p>
 <hr>
 
-Nearest
-<%= pluralize(@building.stations.count, "station") %>
+<strong>Nearest <%= pluralize(@building.stations.count, "station") %></strong>
 <hr>
 
 <% @building.stations.each.with_index(1) do | station, index | %>
