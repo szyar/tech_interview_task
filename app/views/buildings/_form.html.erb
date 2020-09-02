@@ -1,10 +1,10 @@
 <%= form_for @building do |form| %>
-  <% if building.errors.any? %>
+  <% if @building.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
+      <h2><%= pluralize(@building.errors.count, "error") %> prohibited this building from being saved:</h2>
 
       <ul>
-      <% building.errors.full_messages.each do |message| %>
+      <% @building.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -37,24 +37,9 @@
   </div>
   <hr>
 
-  <h3>Add nearest stations</h3>
+  <h3><%= message %></h3>
   <%= form.fields_for :stations do |builder| %>
-
-    <div class="field">
-      <%= builder.label :railway_name %>
-      <%= builder.text_field :railway_name %>
-    </div>
-
-    <div class="field">
-      <%= builder.label :station_name %>
-      <%= builder.text_field :station_name %>
-    </div>
-
-    <div class="field">
-      <%= builder.label :minutes_to_walk %>
-      <%= builder.number_field :minutes_to_walk %>
-    </div>
-
+    <%= render 'station', builder: builder %>
   <% end %>
   <hr>
 
