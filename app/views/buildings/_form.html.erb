@@ -39,11 +39,23 @@
 
   <h3><%= message %></h3>
   <%= form.fields_for :stations do |builder| %>
-    <%= render 'station', builder: builder %>
+    <%= render 'station_fields', f: builder %>
   <% end %>
+  <%= link_to_add_fields 'Add Stations', form, :stations %>
   <hr>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  $('form').on('click', '.add_fields', function(event){
+    console.log('clicked!')
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    return event.preventDefault();
+  });
+</script>
