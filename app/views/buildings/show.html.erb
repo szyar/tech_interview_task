@@ -24,7 +24,10 @@
   <strong>Remark:</strong>
   <%= @building.remark %>
 </p>
+<hr>
 
+Nearest
+<%= pluralize(@building.stations.count, "station") %>
 <hr>
 
 <% @building.stations.each.with_index(1) do | station, index | %>
