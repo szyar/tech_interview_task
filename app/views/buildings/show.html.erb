@@ -25,5 +25,30 @@
   <%= @building.remark %>
 </p>
 
+<hr>
+
+<% @building.stations.each.with_index(1) do | station, index | %>
+<p>
+  <p>
+    <strong>Station <%= index %></strong>
+  </p>
+  <p>
+    <strong>Railway Name:</strong>
+    <%= station.railway_name %>
+  </p>
+
+  <p>
+    <strong>Station Name:</strong>
+    <%= station.station_name %>
+  </p>
+
+  <p>
+    <strong>Minutes to walk:</strong>
+    <%= station.minutes_to_walk %>
+  </p>
+</p>
+<hr>
+<% end %>
+
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>
