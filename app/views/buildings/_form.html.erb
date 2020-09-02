@@ -1,4 +1,4 @@
-<%= form_with(model: building, local: true) do |form| %>
+<%= form_for @building do |form| %>
   <% if building.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
@@ -35,6 +35,28 @@
     <%= form.label :remark %>
     <%= form.text_area :remark %>
   </div>
+  <hr>
+
+  <h3>Add nearest stations</h3>
+  <%= form.fields_for :stations do |builder| %>
+
+    <div class="field">
+      <%= builder.label :railway_name %>
+      <%= builder.text_field :railway_name %>
+    </div>
+
+    <div class="field">
+      <%= builder.label :station_name %>
+      <%= builder.text_field :station_name %>
+    </div>
+
+    <div class="field">
+      <%= builder.label :minutes_to_walk %>
+      <%= builder.number_field :minutes_to_walk %>
+    </div>
+
+  <% end %>
+  <hr>
 
   <div class="actions">
     <%= form.submit %>

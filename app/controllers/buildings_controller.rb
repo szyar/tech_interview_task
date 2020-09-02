@@ -10,6 +10,7 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
+    @building.stations.build
   end
 
   def edit
@@ -49,6 +50,7 @@ class BuildingsController < ApplicationController
   end
 
   def building_params
-    params.require(:building).permit(:name, :rental_fees, :address, :build_year, :remark)
+    params.require(:building).permit(:name, :rental_fees, :address, :build_year, :remark,
+      stations_attributes: [:id, :railway_name, :station_name, :minutes_to_walk])
   end
 end
