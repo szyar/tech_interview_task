@@ -26,13 +26,14 @@
 </p>
 <hr>
 
-<strong>Nearest <%= pluralize(@building.stations.count, "station") %></strong>
+<strong>Nearest stations around this building:
+  <%= pluralize(@building.stations.count, "station") %></strong>
 <hr>
 
 <% @building.stations.each.with_index(1) do | station, index | %>
 <p>
   <p>
-    <strong>Station <%= index %></strong>
+    <strong>Nearest Station <%= index %></strong>
   </p>
   <p>
     <strong>Railway Name:</strong>
