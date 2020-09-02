@@ -41,7 +41,7 @@
   <%= form.fields_for :stations do |builder| %>
     <%= render 'station_fields', f: builder %>
   <% end %>
-  <%= link_to_add_fields 'Add Stations', form, :stations %>
+  <%= add_fields 'Add Stations', form, :stations %>
   <hr>
 
   <div class="actions">
@@ -51,7 +51,6 @@
 
 <script>
   $('form').on('click', '.add_fields', function(event){
-    console.log('clicked!')
     var regexp, time;
     time = new Date().getTime();
     regexp = new RegExp($(this).data('id'), 'g');
