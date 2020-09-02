@@ -9,22 +9,13 @@ class StationsController < ApplicationController
   def show
   end
 
-  def new
-    @station = Station.new
-  end
-
   def edit
   end
 
   def create
-    @station = Station.new(station_params)
-    respond_to do |format|
-      if @station.save
-        format.html { redirect_to @building_station, notice: 'Station was successfully created.' }
-      else
-        format.html { render :new }
-      end
-    end
+    @building = Building.find(params[:id])
+    @station = @building.stations.save(station_params)
+    redirect_to building_path(@building)
   end
 
   def update
@@ -48,7 +39,7 @@ class StationsController < ApplicationController
   def set_building
     @building = Building.find(params[:id])
   end
-  
+
   def set_station
     @station = Station.find(params[:id])
   end

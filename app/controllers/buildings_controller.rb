@@ -3,7 +3,6 @@ class BuildingsController < ApplicationController
 
   def index
     @buildings = Building.all
-    @stations = Station.all
   end
 
   def show
@@ -11,7 +10,6 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
-    @station = Station.new
   end
 
   def edit
