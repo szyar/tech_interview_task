@@ -41,7 +41,7 @@
   <%= form.fields_for :stations do |builder| %>
     <%= render 'station_fields', f: builder %>
   <% end %>
-  <%= add_fields 'Add Stations', form, :stations %>
+  <%= add_another_stations 'Add Another Stations', form, :stations %>
   <hr>
 
   <div class="actions">
