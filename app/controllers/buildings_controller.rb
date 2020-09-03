@@ -51,6 +51,6 @@ class BuildingsController < ApplicationController
 
   def building_params
     params.require(:building).permit(:name, :rental_fees, :address, :build_year, :remark,
-      stations_attributes: [:id, :railway_name, :station_name, :minutes_to_walk])
+      stations_attributes: [:id, :railway_name, :station_name, :minutes_to_walk, :number])
   end
 end

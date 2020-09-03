@@ -30,10 +30,10 @@
   <%= pluralize(@building.stations.count, "station") %></strong>
 <hr>
 
-<% @building.stations.each.with_index(1) do | station, index | %>
+<% @building.stations.each do | station | %>
 <p>
   <p>
-    <strong>Nearest Station <%= index %></strong>
+    <strong>Nearest Station <%= station.number %></strong>
   </p>
   <p>
     <strong>Railway Name:</strong>

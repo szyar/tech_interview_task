@@ -1,6 +1,9 @@
 <div>
-  <% number = 1 %>
-  <h3>Station <%= number %></h3>
+  <div class="field">
+    <%= f.label :station_number %>
+    <%= f.number_field :number %>
+  </div>
+
   <div class="field">
     <%= f.label :railway_name %>
     <%= f.text_field :railway_name %>
@@ -16,3 +19,4 @@
     <%= f.number_field :minutes_to_walk %> minutes
   </div>
 </div>
+<hr>
