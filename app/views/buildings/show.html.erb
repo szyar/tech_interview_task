@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Property Name:</strong>
+  <%= @building.name %>
+</p>
+
+<p>
+  <strong>Rental fees:</strong>
+  <%= @building.rental_fees %> Yen
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @building.address %>
+</p>
+
+<p>
+  <strong>Build year:</strong>
+  <%= @building.build_year %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @building.remark %>
+</p>
+<hr>
+
+<strong>Nearest stations around this building:
+  <%= pluralize(@building.stations.count, "station") %></strong>
+<hr>
+
+<% @building.stations.each do | station | %>
+<p>
+  <p>
+    <strong>Nearest Station <%= station.number %></strong>
+  </p>
+  <p>
+    <strong>Railway Name:</strong>
+    <%= station.railway_name %>
+  </p>
+
+  <p>
+    <strong>Station Name:</strong>
+    <%= station.station_name %>
+  </p>
+
+  <p>
+    <strong>Minutes to walk:</strong>
+    <%= pluralize(station.minutes_to_walk, "minute") %>
+  </p>
+</p>
+<hr>
+<% end %>
+
+<%= link_to 'Edit', edit_building_path(@building) %> |
+<%= link_to 'Back', buildings_path %>

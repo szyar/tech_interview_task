@@ -20,16 +20,16 @@ diver に掲載のテキストに書かれているものを使うこととし�
 - テストコードの実装は不要です
 
 #### 一覧
-![index](https://cloud.githubusercontent.com/assets/1818925/20509523/91902df2-b0ac-11e6-9f3b-adce73dbedf8.png)
+![index](app/assets/images/screenshots/index.png)
 
 #### 閲覧
-![show](https://cloud.githubusercontent.com/assets/1818925/20509520/918d29ae-b0ac-11e6-8310-15474fcd5633.png)
+![show](app/assets/images/screenshots/show.png)
 
 #### 登録
-![new](https://cloud.githubusercontent.com/assets/1818925/20509522/918e87b8-b0ac-11e6-8f4b-5f8ba4945894.png)
+![new](app/assets/images/screenshots/new.png)
 
 #### 編集
-![edit](https://cloud.githubusercontent.com/assets/1818925/20509521/918df348-b0ac-11e6-8eef-6d2e7c833d9a.png)
+![edit](app/assets/images/screenshots/edit.png)
 
 
 ## 注意事項
